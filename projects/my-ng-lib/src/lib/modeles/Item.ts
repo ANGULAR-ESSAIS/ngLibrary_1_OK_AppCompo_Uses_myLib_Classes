@@ -10,4 +10,8 @@ export class Item {
     return(this.sLabel);
   }
 
+  setLabel(psLabel: string) {
+    this.sLabel = psLabel;
+  }
+
 }

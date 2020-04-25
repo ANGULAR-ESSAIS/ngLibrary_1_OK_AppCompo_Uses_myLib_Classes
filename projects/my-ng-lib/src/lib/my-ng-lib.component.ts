@@ -17,4 +17,8 @@ export class MyNgLibComponent implements OnInit {
     this.oItem = new Item('1', 'Mimi');
   }
 
+  public getItem(): Item {
+    return(this.oItem);
+  }
+
 }
