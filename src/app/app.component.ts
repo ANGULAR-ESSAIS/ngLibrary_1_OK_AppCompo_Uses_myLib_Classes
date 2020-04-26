@@ -3,10 +3,11 @@ import { Component, OnInit,
          ChangeDetectorRef, ChangeDetectionStrategy
        } from '@angular/core';
 
-// import {Item} from 'my-ng-lib/lib/modeles/Item';
+import {Item, MyNgLibComponent} from 'my-ng-lib';
+// import * as XX from 'my-ng-lib/lib/modeles/Item';
 // import { MyNgLibComponent } from 'my-ng-lib/lib/my-ng-lib.component';
 
-import * as XX from './../../dist/my-ng-lib/fesm2015/my-ng-lib.js';
+// import * as XX from './../../dist/my-ng-lib/fesm2015/my-ng-lib.js'; //OK mais bof...
 
 @Component({
   selector: 'app-root',
@@ -15,23 +16,32 @@ import * as XX from './../../dist/my-ng-lib/fesm2015/my-ng-lib.js';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit, AfterViewInit {
-   oItem: XX.Item;
-   oChildItem: XX.Item;
+  //  oItem: XX.Item;
+  //  oChildItem: XX.Item;
+   oItem: Item;
+   oChildItem: Item;
 
-   @ViewChild(XX.MyNgLibComponent, {static: true})
-   private oMyNgLibComponent: XX.MyNgLibComponent;
+  //  @ViewChild(XX.MyNgLibComponent, {static: true})
+  //  private oMyNgLibComponent: XX.MyNgLibComponent;
+   @ViewChild(MyNgLibComponent, {static: true})
+   private oMyNgLibComponent: MyNgLibComponent;
 
   constructor(private oChangeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.oItem = new XX.Item('2', 'MAMA');
-    this.oItem.setLabel('MUMU');
+    // this.oItem = new XX.Item('2', 'MAMA');
+    this.oItem = new Item('2', 'MAMA');
+    window.setTimeout(() => {
+      this.oItem.setLabel('MUMU');
+    }, 3000);
   }
 
   ngAfterViewInit() {
-    this.oChildItem = this.oMyNgLibComponent.getItem();
-    this.oChildItem.setLabel('MOMO');
-    this.oChangeDetectorRef.detectChanges(); // Sinon Error : ExpressionChangedAfterItHasBeenCheckedError
+    window.setTimeout(() => {
+      this.oChildItem = this.oMyNgLibComponent.getItem();
+      this.oChildItem.setLabel('MOMO');
+      this.oChangeDetectorRef.detectChanges(); // Sinon Error : ExpressionChangedAfterItHasBeenCheckedError
+    },1500);
   }
 
 }
