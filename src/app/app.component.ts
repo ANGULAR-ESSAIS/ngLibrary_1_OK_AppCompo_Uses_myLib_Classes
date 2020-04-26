@@ -1,15 +1,6 @@
-import { Component, OnInit,
+import { Component, OnInit } from '@angular/core';
 
-        //  AfterViewInit, ViewChild,
-        //  ChangeDetectorRef, ChangeDetectionStrategy // Juste pour une histoire de ExpressionChangedAfterItHasBeenCheckedError
-                                                    // car modif. par code, du Compo(de ma lib), après son ngOnInit.
-       } from '@angular/core';
-
-import {
-  Item, IItem,
-  ComboBoxComponent, /*, MyNgLibComponent*/
-  IMultiChoicesable, IMonoChoiceable
-} from 'my-ng-lib';
+import { IMultiChoicesable, IMonoChoiceable } from 'my-ng-lib';
 
 import { IPays } from './pays/modeles/interfaces/IPays';
 import { PaysService } from './pays/services/pays.service';
@@ -19,44 +10,21 @@ import { PaysService } from './pays/services/pays.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit/*, AfterViewInit*/ {
-  //  oItem: Item;
-  //  oChildItem: Item;
+export class AppComponent implements OnInit {
 
    sSelectedPaysId: string = "";
    aPays: Array<IPays> = [];
 
-  //  @ViewChild(MyNgLibComponent, {static: true})
-  //  private oMyNgLibComponent: MyNgLibComponent;
-
   constructor(
     private oPaysService: PaysService
-    /*private oChangeDetectorRef: ChangeDetectorRef*/
   ) {
     this.sSelectedPaysId = "1";
     this.aPays = this.oPaysService.getListe();
   }
 
   ngOnInit() {
-    // this.oItem = new Item('2', 'MAMA');
-    // this.aItems = this.oPaysService.getListe();
-    // [
-    //   this.oItem,
-    //   new Item('72', 'MOMOOO')
-    // ];
-    // window.setTimeout(() => {
-    //   this.oItem.setLabel('MUMU');
-    // }, 3000);
 
   }
-
-  // ngAfterViewInit() {
-  //   window.setTimeout(() => {
-  //     this.oChildItem = this.oMyNgLibComponent.getItem();
-  //     this.oChildItem.setLabel('MOMO');
-  //     this.oChangeDetectorRef.detectChanges(); // << Sinon Error : ExpressionChangedAfterItHasBeenCheckedError
-  //   }, 1500);
-  // }
 
   onChangeMultiPays(poMultiChoiceable: IMultiChoicesable) {
     const aSelectedItemsId: Array<string> = poMultiChoiceable.getSelectedItemsId();

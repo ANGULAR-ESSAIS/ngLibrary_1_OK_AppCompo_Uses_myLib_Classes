@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { IItem, IItemsService, AItemsService} from 'my-ng-lib';
+import { IItemsService, AItemsService} from 'my-ng-lib';
 
 import { IPays } from '../modeles/interfaces/IPays';
 
