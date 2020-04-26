@@ -1,0 +1,11 @@
+combo-box {
+  display: block;
+  border: solid yellow 4px;
+  width: 10%;
+  margin: auto;
+}
+
+
+combo-box:nth-of-type(2) {
+  border: dashed purple 4px;
+}

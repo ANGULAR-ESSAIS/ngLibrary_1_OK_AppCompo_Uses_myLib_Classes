@@ -1,8 +1,22 @@
-AppCompo<br>
+<!-- AppCompo<br>
 <lib-my-ng-lib></lib-my-ng-lib>
 <br>
 {{oItem | json}}<br>
-{{oChildItem | json}}<br>
+{{oChildItem | json}}<br> -->
+
+<combo-box
+  [multiple]=true
+  [initSelectedItemsId] = '["1","4"]'
+  [items] = "this.aPays"
+  [nbVisibleItems]=2
+  (onChange) = "this.onChangeMultiPays($event)"
+></combo-box>
+<combo-box
+  [initSelectedItemId] = "7"
+  [items] = "this.aPays"
+  [nbVisibleItems]=1
+  (onChange) = "this.onChangePays($event)"
+></combo-box>
 
 
 

@@ -13,6 +13,7 @@ import {MyNgLibModule} from 'my-ng-lib';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     MyNgLibModule
   ],
   providers: [],
