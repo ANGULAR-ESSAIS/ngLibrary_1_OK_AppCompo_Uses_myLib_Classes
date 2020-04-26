@@ -25,7 +25,6 @@ export class ComboBoxComponent implements OnInit, IMonoChoiceable, IMultiChoices
     this.aSelectedItemsId = [`${psSelectedItemId}`]; //Le forçage en string est NECESSAIRE, mais je ne sais pas pourquoi !!
   }
 
-  //@Output("onChange") _oChangeEvent = new EventEmitter<string | Array<string>>();
   @Output("onChange") _oChangeEvent = new EventEmitter<IMonoChoiceable | IMultiChoicesable>();
 
 
@@ -43,10 +42,8 @@ export class ComboBoxComponent implements OnInit, IMonoChoiceable, IMultiChoices
 // ===================================================================
 
   onChange(paSelectedItemsId: Array<string>) {
-    //console.log(paSelectedItemsId); //Array dans tous les cas (combo à choix multiple ou non).
     this._consoleLog();
     //
-    //this._oChangeEvent.emit(paSelectedItemsId);
     this._oChangeEvent.emit(this);
   }
 
@@ -69,7 +66,7 @@ export class ComboBoxComponent implements OnInit, IMonoChoiceable, IMultiChoices
 
   private _consoleLog() {
     if (isDevMode()) {
-      console.log("\n\n", this);
+      // console.log("\n\n==============================\n\n", this, "\n\n==============================\n\n");
     }
   }
 

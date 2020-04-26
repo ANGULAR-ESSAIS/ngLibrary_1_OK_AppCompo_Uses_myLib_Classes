@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {MyNgLibModule} from 'my-ng-lib';
+import {GeneralModule} from 'my-ng-lib';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import {MyNgLibModule} from 'my-ng-lib';
     BrowserModule,
     AppRoutingModule,
 
-    MyNgLibModule
+    GeneralModule
   ],
   providers: [],
   bootstrap: [AppComponent]

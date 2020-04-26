@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { ComboBoxComponent } from './components/combo-box/combo-box.component';
 
@@ -14,4 +14,4 @@ import { ComboBoxComponent } from './components/combo-box/combo-box.component';
   ],
   exports: [ComboBoxComponent]
 })
-export class MyNgLibModule { }
+export class GeneralModule { }
