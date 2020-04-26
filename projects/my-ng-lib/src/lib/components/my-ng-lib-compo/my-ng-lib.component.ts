@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Item } from './modeles/Item';
+import { Item } from './../../modeles/Item';
 
 @Component({
   selector: 'lib-my-ng-lib',

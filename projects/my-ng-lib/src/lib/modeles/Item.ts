@@ -1,4 +1,6 @@
-export class Item {
+import { IItem } from './interfaces/IItem';
+
+export class Item implements IItem {
   constructor(private sId: string, private sLabel: string) {
 
   }
@@ -8,10 +10,6 @@ export class Item {
   }
   getLabel(): string {
     return(this.sLabel);
-  }
-
-  setLabel(psLabel: string) {
-    this.sLabel = psLabel;
   }
 
 }
