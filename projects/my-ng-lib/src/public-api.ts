@@ -4,7 +4,6 @@
 
 export * from './lib/my-ng-lib.service';
 
-export * from './lib//components/my-ng-lib-compo/my-ng-lib.component';
 export * from './lib//components/combo-box/combo-box.component';
 export * from './lib//components/_interfaces/IMonoChoiceable';
 export * from './lib//components/_interfaces/IMultiChoicesable';
