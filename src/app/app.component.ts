@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   onChangeMultiPays(poMultiChoiceable: IMultiChoicesable) {
+    console.log('\n\n');
     const aSelectedItemsId: Array<string> = poMultiChoiceable.getSelectedItemsId();
     console.log("ID pays choisi(s) : "+aSelectedItemsId);
     console.log('Items correspondant: ', "\n");
@@ -37,6 +38,7 @@ export class AppComponent implements OnInit {
 
   onChangePays(poMultiChoiceable: IMonoChoiceable) {
     const sSelectedItemId: string = poMultiChoiceable.getSelectedItemId();
+    console.log('\n\n');
     console.log("ID du pays choisi : "+sSelectedItemId);
     console.log('Item correspondant: ', "\n");
     console.log("   ", this.oPaysService.getById(sSelectedItemId) );
