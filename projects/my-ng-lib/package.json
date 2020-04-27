@@ -1,6 +1,6 @@
 {
-  "name": "my-ng-lib",
-  "version": "0.0.1",
+  "name": "@rick.info.dev/my-ng-lib-combo-box-and-classes-interfaces",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
